@@ -76,6 +76,8 @@
             this.Txt_Agencia.Name = "Txt_Agencia";
             this.Txt_Agencia.Size = new System.Drawing.Size(100, 20);
             this.Txt_Agencia.TabIndex = 4;
+            this.Txt_Agencia.TabStop = false;
+            this.Txt_Agencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Agencia_KeyPress);
             // 
             // Txt_NumeroConta
             // 
@@ -84,6 +86,8 @@
             this.Txt_NumeroConta.Name = "Txt_NumeroConta";
             this.Txt_NumeroConta.Size = new System.Drawing.Size(100, 20);
             this.Txt_NumeroConta.TabIndex = 5;
+            this.Txt_NumeroConta.TabStop = false;
+            this.Txt_NumeroConta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_NumeroConta_KeyPress);
             // 
             // Txt_TitularConta
             // 
@@ -92,6 +96,8 @@
             this.Txt_TitularConta.Name = "Txt_TitularConta";
             this.Txt_TitularConta.Size = new System.Drawing.Size(215, 20);
             this.Txt_TitularConta.TabIndex = 6;
+            this.Txt_TitularConta.TabStop = false;
+            this.Txt_TitularConta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_TitularConta_KeyPress);
             // 
             // Btn_Saque
             // 
@@ -126,6 +132,8 @@
             this.Txt_Valor.Name = "Txt_Valor";
             this.Txt_Valor.Size = new System.Drawing.Size(100, 20);
             this.Txt_Valor.TabIndex = 12;
+            this.Txt_Valor.TabStop = false;
+            this.Txt_Valor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Valor_KeyPress);
             // 
             // Lbl_Valor
             // 
@@ -150,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 185);
             this.Controls.Add(this.Txt_Saldo);
             this.Controls.Add(this.Txt_Valor);
             this.Controls.Add(this.Lbl_Valor);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Projeto_Banco
 {
@@ -18,6 +19,7 @@ namespace Projeto_Banco
              realizaSaque = saldo - valor;
             */
             saldo -= valor; // Saldo = saldo - valor
+            MessageBox.Show("Saque realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         public void Realiza_Deposito()
