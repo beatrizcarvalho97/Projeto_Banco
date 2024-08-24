@@ -9,7 +9,7 @@ namespace Projeto_Banco
 {
     internal class ContaBancaria
     {
-        public int agencia,numeroConta;
+        public int agencia,numeroConta,idade,mesNascimento;
         public string titularConta;
         public double valor, saldo = 100;
 

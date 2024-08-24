@@ -40,6 +40,12 @@
             this.Txt_Valor = new System.Windows.Forms.TextBox();
             this.Lbl_Valor = new System.Windows.Forms.Label();
             this.Lbl_Saldo = new System.Windows.Forms.Label();
+            this.Lbl_Saque = new System.Windows.Forms.Label();
+            this.Lbl_Deposito = new System.Windows.Forms.Label();
+            this.Lbl_Idade = new System.Windows.Forms.Label();
+            this.Txt_Idade = new System.Windows.Forms.TextBox();
+            this.Lbl_MesNascimento = new System.Windows.Forms.Label();
+            this.Txt_Mes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Lbl_Agencia
@@ -117,6 +123,7 @@
             this.Btn_Deposito.TabIndex = 9;
             this.Btn_Deposito.Text = "Depósito";
             this.Btn_Deposito.UseVisualStyleBackColor = true;
+            this.Btn_Deposito.Click += new System.EventHandler(this.Btn_Deposito_Click);
             // 
             // Txt_Saldo
             // 
@@ -153,12 +160,74 @@
             this.Lbl_Saldo.TabIndex = 10;
             this.Lbl_Saldo.Text = "Saldo Disponível";
             // 
+            // Lbl_Saque
+            // 
+            this.Lbl_Saque.AutoSize = true;
+            this.Lbl_Saque.Enabled = false;
+            this.Lbl_Saque.Location = new System.Drawing.Point(203, 158);
+            this.Lbl_Saque.Name = "Lbl_Saque";
+            this.Lbl_Saque.Size = new System.Drawing.Size(0, 13);
+            this.Lbl_Saque.TabIndex = 14;
+            // 
+            // Lbl_Deposito
+            // 
+            this.Lbl_Deposito.AutoSize = true;
+            this.Lbl_Deposito.Enabled = false;
+            this.Lbl_Deposito.Location = new System.Drawing.Point(317, 158);
+            this.Lbl_Deposito.Name = "Lbl_Deposito";
+            this.Lbl_Deposito.Size = new System.Drawing.Size(0, 13);
+            this.Lbl_Deposito.TabIndex = 15;
+            // 
+            // Lbl_Idade
+            // 
+            this.Lbl_Idade.AutoSize = true;
+            this.Lbl_Idade.Location = new System.Drawing.Point(632, 49);
+            this.Lbl_Idade.Name = "Lbl_Idade";
+            this.Lbl_Idade.Size = new System.Drawing.Size(34, 13);
+            this.Lbl_Idade.TabIndex = 16;
+            this.Lbl_Idade.Text = "Idade";
+            // 
+            // Txt_Idade
+            // 
+            this.Txt_Idade.Location = new System.Drawing.Point(624, 65);
+            this.Txt_Idade.MaxLength = 3;
+            this.Txt_Idade.Name = "Txt_Idade";
+            this.Txt_Idade.Size = new System.Drawing.Size(50, 20);
+            this.Txt_Idade.TabIndex = 17;
+            this.Txt_Idade.TabStop = false;
+            this.Txt_Idade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Idade_KeyPress);
+            // 
+            // Lbl_MesNascimento
+            // 
+            this.Lbl_MesNascimento.AutoSize = true;
+            this.Lbl_MesNascimento.Location = new System.Drawing.Point(680, 49);
+            this.Lbl_MesNascimento.Name = "Lbl_MesNascimento";
+            this.Lbl_MesNascimento.Size = new System.Drawing.Size(86, 13);
+            this.Lbl_MesNascimento.TabIndex = 18;
+            this.Lbl_MesNascimento.Text = "Mês Nascimento";
+            // 
+            // Txt_Mes
+            // 
+            this.Txt_Mes.Location = new System.Drawing.Point(705, 65);
+            this.Txt_Mes.MaxLength = 2;
+            this.Txt_Mes.Name = "Txt_Mes";
+            this.Txt_Mes.Size = new System.Drawing.Size(27, 20);
+            this.Txt_Mes.TabIndex = 19;
+            this.Txt_Mes.TabStop = false;
+            this.Txt_Mes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Mes_KeyPress);
+            // 
             // Frm_ContaBancaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 185);
+            this.Controls.Add(this.Txt_Mes);
+            this.Controls.Add(this.Lbl_MesNascimento);
+            this.Controls.Add(this.Txt_Idade);
+            this.Controls.Add(this.Lbl_Idade);
+            this.Controls.Add(this.Lbl_Deposito);
+            this.Controls.Add(this.Lbl_Saque);
             this.Controls.Add(this.Txt_Saldo);
             this.Controls.Add(this.Txt_Valor);
             this.Controls.Add(this.Lbl_Valor);
@@ -193,6 +262,12 @@
         private System.Windows.Forms.TextBox Txt_Valor;
         private System.Windows.Forms.Label Lbl_Valor;
         private System.Windows.Forms.Label Lbl_Saldo;
+        private System.Windows.Forms.Label Lbl_Saque;
+        private System.Windows.Forms.Label Lbl_Deposito;
+        private System.Windows.Forms.Label Lbl_Idade;
+        private System.Windows.Forms.TextBox Txt_Idade;
+        private System.Windows.Forms.Label Lbl_MesNascimento;
+        private System.Windows.Forms.TextBox Txt_Mes;
     }
 }
 
