@@ -46,6 +46,7 @@
             this.Txt_Idade = new System.Windows.Forms.TextBox();
             this.Lbl_MesNascimento = new System.Windows.Forms.Label();
             this.Txt_Mes = new System.Windows.Forms.TextBox();
+            this.Btn_Investir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Lbl_Agencia
@@ -216,12 +217,23 @@
             this.Txt_Mes.TabStop = false;
             this.Txt_Mes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Mes_KeyPress);
             // 
+            // Btn_Investir
+            // 
+            this.Btn_Investir.Location = new System.Drawing.Point(635, 117);
+            this.Btn_Investir.Name = "Btn_Investir";
+            this.Btn_Investir.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Investir.TabIndex = 20;
+            this.Btn_Investir.Text = "Investir";
+            this.Btn_Investir.UseVisualStyleBackColor = true;
+            this.Btn_Investir.Click += new System.EventHandler(this.Btn_Investir_Click);
+            // 
             // Frm_ContaBancaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 185);
+            this.Controls.Add(this.Btn_Investir);
             this.Controls.Add(this.Txt_Mes);
             this.Controls.Add(this.Lbl_MesNascimento);
             this.Controls.Add(this.Txt_Idade);
@@ -268,6 +280,7 @@
         private System.Windows.Forms.TextBox Txt_Idade;
         private System.Windows.Forms.Label Lbl_MesNascimento;
         private System.Windows.Forms.TextBox Txt_Mes;
+        public System.Windows.Forms.Button Btn_Investir;
     }
 }
 

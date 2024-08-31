@@ -22,7 +22,7 @@ namespace Projeto_Banco
 
         private void Btn_Saque_Click(object sender, EventArgs e)
         {
-            if (Txt_Agencia.TextLength == 4 && Txt_NumeroConta.TextLength == 5 && Txt_TitularConta.TextLength >= 3 && Txt_Valor.Text != "")
+            if (Txt_Agencia.TextLength == 4 && Txt_NumeroConta.TextLength == 5 && Txt_TitularConta.TextLength >= 3 && Txt_Valor.Text != "" && int.Parse(Txt_Idade.Text) >= 18 && int.Parse(Txt_Idade.Text) <= 120 && Txt_Idade.Text == "" && int.Parse(Txt_Mes.Text) > 0 && int.Parse(Txt_Mes.Text) < 13 && Txt_Mes.Text == "")
             {
                 // Armazenando todas as informações que foram digitadas para as variáveis da classe.
                 // Quem irá receber o valor?
@@ -32,6 +32,8 @@ namespace Projeto_Banco
                 Conta.numeroConta = int.Parse(Txt_NumeroConta.Text);
                 Conta.titularConta = Txt_TitularConta.Text;
                 Conta.valor = double.Parse(Txt_Valor.Text);
+                Conta.idade = int.Parse(Txt_Idade.Text);
+                Conta.mesNascimento = int.Parse(Txt_Mes.Text);
 
                 if (Conta.valor <= Conta.saldo)
                 {
@@ -115,7 +117,7 @@ namespace Projeto_Banco
             {
                 if (e.KeyChar == 13)
                 {
-                    Txt_Valor.Focus();
+                    Txt_Idade.Focus();
                 }
             }
             else
@@ -158,7 +160,7 @@ namespace Projeto_Banco
                     {
                          Conta.idade = int.Parse(Txt_Idade.Text);
 
-                        if (Conta.idade >= 18)
+                        if (Conta.idade >= 18 && Conta.idade <= 100)
                         {
                             Txt_Mes.Focus();
                         }
@@ -182,7 +184,7 @@ namespace Projeto_Banco
 
         private void Btn_Deposito_Click(object sender, EventArgs e)
         {
-            if (Txt_Agencia.TextLength == 4 && Txt_NumeroConta.TextLength == 5 && Txt_TitularConta.TextLength >= 3 && Txt_Valor.Text != "")
+            if (Txt_Agencia.TextLength == 4 && Txt_NumeroConta.TextLength == 5 && Txt_TitularConta.TextLength >= 3 && Txt_Valor.Text != "" && Conta.idade >= 18 && Conta.idade <= 120 && Txt_Idade.Text != "" && Conta.mesNascimento > 0 && Conta.mesNascimento < 13 && Txt_Mes.Text != "")
             {
                 // Armazenando todas as informações que foram digitadas para as variáveis da classe.
                 // Quem irá receber o valor?
@@ -192,6 +194,8 @@ namespace Projeto_Banco
                 Conta.numeroConta = int.Parse(Txt_NumeroConta.Text);
                 Conta.titularConta = Txt_TitularConta.Text;
                 Conta.valor = double.Parse(Txt_Valor.Text);
+                Conta.idade = int.Parse(Txt_Idade.Text);
+                Conta.mesNascimento = int.Parse(Txt_Mes.Text);
 
                 Conta.Realiza_Deposito();
                 // Este item precisa acontecer aqui pois a classe não reconhece o campo do Txt, para "incluir" o valor na campo a ser preenchido.
@@ -204,6 +208,23 @@ namespace Projeto_Banco
             else
             {
                 MessageBox.Show("Verifique se todas as informações foram digitadas!!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Btn_Investir_Click(object sender, EventArgs e)
+        {
+            Conta.saldo = double.Parse(Txt_Saldo.Text);
+
+            if(Conta.saldo >= 100)
+            {
+                Frm_Investimentos investimentos = new Frm_Investimentos(); // Instanciando o objeto investimentos, para chamar a tela de investimentos
+                investimentos.Txt_Saldo.Text = Txt_Saldo.Text;
+                investimentos.Show(); //Abrindo a tela de investimentos
+                Hide(); //Esse comando irá ocultar a tela inicial
+            }
+            else
+            {
+                MessageBox.Show("O saldo mínimo para investir é de R$100,00","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

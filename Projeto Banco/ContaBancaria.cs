@@ -11,7 +11,7 @@ namespace Projeto_Banco
     {
         public int agencia,numeroConta,idade,mesNascimento;
         public string titularConta;
-        public double valor, saldo = 100;
+        public double valor, saldo = 100, investimento;
 
         public void Realiza_Saque()
         {
